@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nancy.Demo.TinyBlog", "Nancy.Demo.TinyBlog\Nancy.Demo.TinyBlog.csproj", "{E945E104-2687-4637-AE33-6EECBF157E8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nancy.Demo.TinyBlog.Domain", "Nancy.Demo.TinyBlog.Domain\Nancy.Demo.TinyBlog.Domain.csproj", "{9E4A57D1-A666-453B-965F-27907F69B983}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nancy.Demo.TinyBlog.Tests", "Nancy.Demo.TinyBlog.Tests\Nancy.Demo.TinyBlog.Tests.csproj", "{8ABBB0F4-5154-4461-B975-C60A3FF26079}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E945E104-2687-4637-AE33-6EECBF157E8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E945E104-2687-4637-AE33-6EECBF157E8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E945E104-2687-4637-AE33-6EECBF157E8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E945E104-2687-4637-AE33-6EECBF157E8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E4A57D1-A666-453B-965F-27907F69B983}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E4A57D1-A666-453B-965F-27907F69B983}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E4A57D1-A666-453B-965F-27907F69B983}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E4A57D1-A666-453B-965F-27907F69B983}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8ABBB0F4-5154-4461-B975-C60A3FF26079}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8ABBB0F4-5154-4461-B975-C60A3FF26079}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8ABBB0F4-5154-4461-B975-C60A3FF26079}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8ABBB0F4-5154-4461-B975-C60A3FF26079}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

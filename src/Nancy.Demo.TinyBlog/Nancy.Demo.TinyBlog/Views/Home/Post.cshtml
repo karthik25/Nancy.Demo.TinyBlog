@@ -1,0 +1,14 @@
+﻿@{
+    Layout = "_Layout.cshtml";
+}
+
+<h2>@Model.Post.Title</h2>
+<br/>
+
+<div>
+    @{
+        var htmlString = new Nancy.ViewEngines.Razor.NonEncodedHtmlString(Model.Post.Content);
+    }
+
+    @htmlString
+</div>

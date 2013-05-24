@@ -1,0 +1,7 @@
+﻿<h3>Archives</h3>
+<ul style="list-style-type:none">
+    @foreach (var archive in Model)
+    {
+        <li><a href="@archive.Slug">@archive.MonthYear</a></li>	
+    }
+</ul>

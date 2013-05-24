@@ -1,0 +1,29 @@
+﻿@{
+    Layout = "_Layout.cshtml";
+}
+
+<style type="text/css">
+    .post {
+        color: black
+    }
+
+    .post:hover {
+        color: black;
+    }
+</style>
+
+<h2>my posts</h2>
+<br/>
+
+@foreach (var post in Model.Posts)
+{
+    <div>
+        &raquo; <a href="/blog/@post.PostUrl" class="post">@post.Title</a>
+    </div>
+    <br/>
+}
+
+@if (Model.Posts.Count == 0)
+{
+    <div>there are no posts here!!!</div>
+}

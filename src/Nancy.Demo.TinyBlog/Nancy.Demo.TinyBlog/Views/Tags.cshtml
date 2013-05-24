@@ -1,0 +1,7 @@
+﻿<h3>Tags</h3>
+<ul style="list-style-type:none">
+    @foreach (var tag in Model)
+    {
+        <li><a href="@tag.TagSlug">@tag.TagText</a></li>
+    }
+</ul>

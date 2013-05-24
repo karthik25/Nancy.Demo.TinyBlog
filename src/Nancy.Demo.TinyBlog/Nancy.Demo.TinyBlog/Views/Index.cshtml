@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>tiny_Blog</title>
+
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="../../Content/bootstrap.css" rel="Stylesheet" />
+        <link href="../../Content/default.min.css" rel="Stylesheet" />
+    
+        <script src="../../Content/scripts/jquery.min.js"></script>
+        <script src="../../Content/scripts/highlight.min.js"></script>
+        <script src="../../content/scripts/bootstrap.js"></script>
+    
+        <script>
+            $(document).ready(function () {
+                hljs.tabReplace = '    ';
+                hljs.initHighlightingOnLoad();
+            });
+        </script>
+
+        <style type="text/css">
+            body {
+                padding-top: 60px;
+                padding-bottom: 40px;
+            }
+
+            .logo {
+                font-weight: bolder;
+                font-size: x-large;
+                text-shadow: 1px 0px 0px #686868 , 0px 1px 0px #686868, -1px 0px 0px #686868, 0px -1px 0px #686868, 1px 4px 5px #aeaeae;
+                text-decoration: none;
+                color: black
+            }
+
+            .logo:hover {
+                text-decoration: none;
+                color: #51a351
+            }
+        </style>
+    
+    </head>
+    <body>
+
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="logo" title="a very simple blog using nancy & yaml !!!" href="/blog">
+                        tiny_Blog
+                    </a>
+                    <div class="nav-collapse pull-right">
+                        <ul class="nav">
+                            <li><a href="/blog">Home</a></li>
+                            <li><a href="/blog/about">About</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">            
+            <div class="hero-unit">
+                <p>
+                    tiny_Blog is a very simple blogging system, This is a new approach to blogging and so here, you don't 
+                go through the troubles of creating a post with the help of add/edit/manage pages. To create a post just 
+                create a .yml file within the <b>Posts</b> folder! 
+                </p>
+
+                <p>
+                    It should use the following format - there should be a "title", "date_created", 
+                "date_edited", "content" and "tags"! That's it!!! The file name will act as the url :) So, if the file name
+                is "Lorem Ipsum Dolor.yml", the url will be "http://&lt;base_url&gt;/blog/lorem-ipsum-dolor" !
+                </p>
+
+                <p>
+                    For more information about YAML, refer the wikipedia page: http://en.wikipedia.org/wiki/Yaml. Given below is a
+                    sample YAML file.
+                </p>
+
+                <pre>
+<code>
+    ---
+    <b><i>title</i></b>: Lorem Ipsum Dolor
+    <b><i>date_created</i></b>: 2013-05-18
+    <b><i>date_edited</i></b>: 2013-05-18
+    <b><i>content</i></b>: Lorem ipsum dolor sit amet, consectetur <b>adipiscing</b> elit. Sed orci ante, tincidunt vitae hendrerit.
+    <b><i>tags</i></b>:
+        - ASP.Net
+        - C#
+        - IronRuby
+</code>
+</pre>
+            </div>
+        </div>
+    </body>
+</html>

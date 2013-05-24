@@ -1,9 +1,9 @@
 ﻿using System.Globalization;
-using System.IO;
 using System.Linq;
 using Nancy.Demo.TinyBlog.Domain.Abstract;
 using Nancy.Demo.TinyBlog.Domain.Utils;
 using Nancy.Demo.TinyBlog.Model;
+using Nancy.Demo.TinyBlog.Providers;
 
 namespace Nancy.Demo.TinyBlog.Modules
 {
@@ -13,7 +13,7 @@ namespace Nancy.Demo.TinyBlog.Modules
         private readonly IRootPathProvider _rootPathProvider;
 
         public HomeModule(ILocator locator, IRootPathProvider rootPathProvider)
-            : base("/blog")
+            : base(Constants.BlogBasePath)
         {
             _locator = locator;
             _rootPathProvider = rootPathProvider;
@@ -28,7 +28,7 @@ namespace Nancy.Demo.TinyBlog.Modules
 
         private object RenderIndex(dynamic parameters)
         {
-            var list = _locator.GetPosts(GetPostsPath());
+            var list = _locator.GetPosts(PathProvider.GetPostsPath(_rootPathProvider));
             var model = new PostListingModel { Posts = list };
             return View["Index", model];
         }
@@ -42,7 +42,7 @@ namespace Nancy.Demo.TinyBlog.Modules
         {
             var year = parameters.year;
             var month = parameters.month;
-            var list = _locator.GetPosts(GetPostsPath());
+            var list = _locator.GetPosts(PathProvider.GetPostsPath(_rootPathProvider));
             var posts = new PostListingModel
                 {
                     Year = year, 
@@ -56,7 +56,7 @@ namespace Nancy.Demo.TinyBlog.Modules
         private object RenderPostsByTag(dynamic parameters)
         {
             var tag = parameters.tagId;
-            var list = _locator.GetPosts(GetPostsPath());
+            var list = _locator.GetPosts(PathProvider.GetPostsPath(_rootPathProvider));
             var posts = new PostListingModel {Tag = tag, Posts = list.Where(l => l.Tags.Select(UrlGenerator.UrlFriendly).ToList().Contains(tag)).ToList()};
             return View["Posts", posts];
         }
@@ -64,7 +64,7 @@ namespace Nancy.Demo.TinyBlog.Modules
         private object RenderPost(dynamic parameters)
         {
             var postUrl = parameters.post_url;
-            var list = _locator.GetPosts(GetPostsPath());
+            var list = _locator.GetPosts(PathProvider.GetPostsPath(_rootPathProvider));
             var requiredPost = list.SingleOrDefault(l => l.PostUrl == postUrl);
 
             if (requiredPost == null)
@@ -79,13 +79,6 @@ namespace Nancy.Demo.TinyBlog.Modules
         public object Render404(dynamic parameters)
         {
             return View["NotFound"];
-        }
-
-        private string GetPostsPath()
-        {
-            var rootPath = _rootPathProvider.GetRootPath();
-            var requiredPath = Path.Combine(rootPath, "Posts");
-            return requiredPath;
         }
     }
 }

@@ -95,6 +95,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Constants.cs" />
     <Compile Include="Model\MonthYearModel.cs" />
     <Compile Include="Model\PostListingModel.cs" />
     <Compile Include="Model\PostViewModel.cs" />
@@ -102,6 +103,7 @@
     <Compile Include="Modules\HomeModule.cs" />
     <Compile Include="Modules\IndexModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\PathProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

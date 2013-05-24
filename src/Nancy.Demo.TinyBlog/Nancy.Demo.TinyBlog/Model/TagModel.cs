@@ -18,7 +18,7 @@ namespace Nancy.Demo.TinyBlog.Model
             ILocator postLocator = new PostLocator();
             var posts = postLocator.GetPosts(GetPostsPath());
             var allTags = posts.SelectMany(p => p.Tags).ToList().Distinct();
-            return allTags.Select(t => new TagModel { TagText = t, TagSlug = string.Format("/blog/tag/{0}", UrlGenerator.UrlFriendly(t)) }).ToList();
+            return allTags.Select(t => new TagModel { TagText = t, TagSlug = string.Format("{0}/tag/{1}", BasePath, UrlGenerator.UrlFriendly(t)) }).ToList();
         }
 
         private static string GetPostsPath()
@@ -28,5 +28,7 @@ namespace Nancy.Demo.TinyBlog.Model
             var requiredPath = Path.Combine(rootPath, "Posts");
             return requiredPath;
         }
+
+        private const string BasePath = "/blog";
     }
 }

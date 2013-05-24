@@ -22,7 +22,7 @@ namespace Nancy.Demo.TinyBlog.Model
                              .OrderByDescending(g => g.Key.Year)
                              .ThenByDescending(g => g.Key.Month);
             return @group.Select(g => new MonthYearModel { MonthYear = string.Format("{0} {1}", GetMonthName(g.Key.Month), g.Key.Year), 
-                                                           Slug = string.Format("/blog/{0}/{1}", g.Key.Year, g.Key.Month.ToString("00"))})
+                                                           Slug = string.Format("{0}/{1}/{2}", BasePath, g.Key.Year, g.Key.Month.ToString("00"))})
                          .ToList();
         }
 
@@ -39,5 +39,7 @@ namespace Nancy.Demo.TinyBlog.Model
             var dateTime = new DateTime(DateTime.Now.Year, monthNumber, 1);
             return dateTime.ToString("MMM", CultureInfo.InvariantCulture);
         }
+
+        private const string BasePath = "/blog";
     }
 }
